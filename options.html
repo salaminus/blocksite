@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Настройки блокировщика сайтов</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="options-container">
+    <h1>Настройки блокировщика сайтов</h1>
+    
+    <div class="section">
+      <h2>Состояние блокировки</h2>
+      <div class="blocking-status">
+        <p>Текущий статус: <strong id="blockingStatus">Загрузка...</strong></p>
+        <button id="toggleBlockingOptions" class="btn btn-primary">Выключить блокировку</button>
+      </div>
+    </div>
+    
+    <div class="section">
+      <h2>Управление сайтами</h2>
+      
+      <div class="add-site">
+        <input type="text" id="newSite" placeholder="Доменное имя (например: facebook.com)">
+        <button id="addNewSite" class="btn btn-primary">Добавить сайт</button>
+      </div>
+      
+      <div class="sites-controls">
+        <button id="enableAll" class="btn btn-secondary">Включить все сайты</button>
+        <button id="disableAll" class="btn btn-secondary">Выключить все сайты</button>
+        <span class="sites-stats">
+          Заблокировано: <strong id="totalBlocked">0</strong> | 
+          Разрешено: <strong id="totalDisabled">0</strong>
+        </span>
+      </div>
+      
+      <div class="blocked-list">
+        <h3>Список заблокированных сайтов:</h3>
+        <div class="search-box">
+          <input type="text" id="siteSearch" placeholder="Поиск сайта...">
+        </div>
+        <ul id="sitesList"></ul>
+      </div>
+    </div>
+    
+    <div class="section">
+      <h2>Смена пароля</h2>
+      <div class="password-form">
+        <input type="password" id="currentPassword" placeholder="Текущий пароль">
+        <input type="password" id="newPassword" placeholder="Новый пароль">
+        <input type="password" id="confirmPassword" placeholder="Подтвердите новый пароль">
+        <button id="changePassword" class="btn btn-primary">Сменить пароль</button>
+        <div id="passwordMessage" class="message"></div>
+      </div>
+    </div>
+    
+    <div class="section">
+      <h2>Импорт/Экспорт настроек</h2>
+      <div class="import-export">
+        <button id="exportSettings" class="btn btn-secondary">Экспорт настроек</button>
+        <button id="importSettings" class="btn btn-secondary">Импорт настроек</button>
+        <input type="file" id="importFile" accept=".json" style="display: none;">
+      </div>
+    </div>
+  </div>
+
+  <script src="options.js"></script>
+</body>
+</html>
