@@ -1,0 +1,664 @@
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f5f5f5;
+  color: #333;
+}
+
+.popup-container {
+  width: 300px;
+  padding: 15px;
+}
+
+.options-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+h1, h2, h3, h4 {
+  color: #2c3e50;
+  margin-top: 0;
+}
+
+.section {
+  background: white;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.btn {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.2s;
+}
+
+.btn-primary {
+  background-color: #3498db;
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: #2980b9;
+}
+
+.btn-secondary {
+  background-color: #95a5a6;
+  color: white;
+}
+
+.btn-secondary:hover {
+  background-color: #7f8c8d;
+}
+
+.btn-danger {
+  background-color: #e74c3c;
+  color: white;
+}
+
+.btn-danger:hover {
+  background-color: #c0392b;
+}
+
+.btn-small {
+  padding: 4px 8px;
+  font-size: 12px;
+}
+
+.controls {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.quick-add, .add-site {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.quick-add input, .add-site input {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.password-form input {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.status {
+  padding: 10px;
+  background-color: #ecf0f1;
+  border-radius: 4px;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.blocked-sites-list ul, .blocked-list ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.blocked-sites-list li, .blocked-list li {
+  padding: 8px;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.blocked-sites-list li.empty, .blocked-list li.empty {
+  color: #7f8c8d;
+  font-style: italic;
+  justify-content: center;
+}
+
+.remove-btn {
+  background: none;
+  border: none;
+  color: #e74c3c;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.message {
+  padding: 10px;
+  border-radius: 4px;
+  margin-top: 10px;
+}
+
+.message.success {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.message.error {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+.import-export {
+  display: flex;
+  gap: 10px;
+}
+
+/* Стили для красивого промпта пароля */
+.password-prompt {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.password-prompt-content {
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  min-width: 300px;
+}
+
+.password-prompt input {
+  width: 100%;
+  padding: 12px;
+  margin: 15px 0;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+.password-prompt-buttons {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+.password-prompt-buttons button {
+  padding: 10px 20px;
+}
+
+/* Дополнение к существующим стилям */
+
+.status-enabled {
+  color: #27ae60;
+  font-weight: bold;
+}
+
+.status-disabled {
+  color: #e74c3c;
+  font-weight: bold;
+}
+
+.blocking-status {
+  padding: 15px;
+  background-color: #f8f9fa;
+  border-radius: 6px;
+  border-left: 4px solid #3498db;
+}
+
+.blocking-status p {
+  margin: 0 0 10px 0;
+}
+
+/* Улучшенные стили для сообщений */
+.message {
+  padding: 10px;
+  border-radius: 4px;
+  margin-top: 10px;
+  font-weight: 500;
+}
+
+.message.success {
+  background-color: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+}
+
+.message.error {
+  background-color: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+}
+
+/* Стили для кнопок статуса */
+.btn-danger {
+  background-color: #e74c3c;
+  color: white;
+}
+
+.btn-danger:hover {
+  background-color: #c0392b;
+}
+
+/* Дополнение к существующим стилям */
+
+.temp-message {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  padding: 12px 20px;
+  border-radius: 6px;
+  color: white;
+  font-weight: bold;
+  z-index: 10000;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  animation: slideIn 0.3s ease-out;
+}
+
+.temp-message.success {
+  background: #27ae60;
+  border: 1px solid #229954;
+}
+
+.temp-message.error {
+  background: #e74c3c;
+  border: 1px solid #c0392b;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Улучшенные стили для статуса блокировки */
+.status-enabled {
+  color: #27ae60;
+  font-weight: bold;
+  padding: 4px 8px;
+  background: #d5f4e6;
+  border-radius: 4px;
+}
+
+.status-disabled {
+  color: #e74c3c;
+  font-weight: bold;
+  padding: 4px 8px;
+  background: #fadbd8;
+  border-radius: 4px;
+}
+
+.blocking-status {
+  padding: 15px;
+  background-color: #f8f9fa;
+  border-radius: 6px;
+  border-left: 4px solid #3498db;
+}
+
+/* Дополнение к существующим стилям */
+
+.sites-controls {
+  display: flex;
+  gap: 5px;
+  margin-bottom: 10px;
+}
+
+.sites-controls .btn-small {
+  padding: 4px 8px;
+  font-size: 11px;
+}
+
+.blocked-sites-list li {
+  display: flex;
+  align-items: center;
+  padding: 8px;
+  border-bottom: 1px solid #eee;
+  gap: 8px;
+}
+
+.site-enabled {
+  background-color: #f8f9fa;
+}
+
+.site-disabled {
+  background-color: #e9ecef;
+  opacity: 0.7;
+}
+
+.site-toggle {
+  margin: 0;
+  cursor: pointer;
+}
+
+.site-name {
+  flex: 1;
+  font-size: 13px;
+}
+
+.remove-btn {
+  background: none;
+  border: none;
+  color: #e74c3c;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 2px 6px;
+  border-radius: 3px;
+}
+
+.remove-btn:hover {
+  background-color: #f5b7b1;
+}
+
+.temp-message {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  padding: 12px 20px;
+  border-radius: 6px;
+  color: white;
+  font-weight: bold;
+  z-index: 10000;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  animation: slideIn 0.3s ease-out;
+}
+
+.temp-message.success {
+  background: #27ae60;
+  border: 1px solid #229954;
+}
+
+.temp-message.error {
+  background: #e74c3c;
+  border: 1px solid #c0392b;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.status-enabled {
+  color: #27ae60;
+  font-weight: bold;
+}
+
+.status-disabled {
+  color: #e74c3c;
+  font-weight: bold;
+}
+
+/* Дополнение к существующим стилям */
+
+.site-toggle:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.site-toggle-loading {
+  position: relative;
+}
+
+.site-toggle-loading::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 12px;
+  height: 12px;
+  margin: -6px 0 0 -6px;
+  border: 2px solid #f3f3f3;
+  border-top: 2px solid #3498db;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.sites-controls .btn-small:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Дополнение к существующим стилям */
+
+.popup-container {
+  width: 280px;
+  padding: 15px;
+}
+
+.stats {
+  margin: 15px 0;
+  padding: 15px;
+  background: #f8f9fa;
+  border-radius: 8px;
+  border-left: 4px solid #3498db;
+}
+
+.stat-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.stat-item:last-child {
+  margin-bottom: 0;
+}
+
+.stat-number {
+  font-size: 24px;
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+.stat-label {
+  font-size: 12px;
+  color: #7f8c8d;
+  text-align: right;
+  flex: 1;
+  margin-left: 10px;
+}
+
+.quick-action {
+  text-align: center;
+  padding: 10px;
+  background: #e8f4fd;
+  border-radius: 6px;
+  margin-top: 10px;
+}
+
+.quick-action p {
+  margin: 0;
+  font-size: 12px;
+  color: #3498db;
+}
+
+/* Стили для настроек */
+.sites-stats {
+  font-size: 14px;
+  color: #7f8c8d;
+  margin-left: auto;
+}
+
+.search-box {
+  margin-bottom: 15px;
+}
+
+.search-box input {
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.sites-controls {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 15px;
+  flex-wrap: wrap;
+}
+
+.blocked-list li {
+  display: flex;
+  align-items: center;
+  padding: 12px;
+  border-bottom: 1px solid #eee;
+  gap: 12px;
+  transition: background-color 0.2s;
+}
+
+.blocked-list li:hover {
+  background-color: #f8f9fa;
+}
+
+.site-enabled {
+  background-color: #f8f9fa;
+}
+
+.site-disabled {
+  background-color: #e9ecef;
+  opacity: 0.7;
+}
+
+.site-toggle {
+  margin: 0;
+  cursor: pointer;
+  transform: scale(1.2);
+}
+
+.site-name {
+  flex: 1;
+  font-size: 14px;
+  font-family: monospace;
+}
+
+.temp-message {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  padding: 12px 20px;
+  border-radius: 6px;
+  color: white;
+  font-weight: bold;
+  z-index: 10000;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.status-enabled {
+  color: #27ae60;
+  font-weight: bold;
+  padding: 4px 8px;
+  background: #d5f4e6;
+  border-radius: 4px;
+}
+
+.status-disabled {
+  color: #e74c3c;
+  font-weight: bold;
+  padding: 4px 8px;
+  background: #fadbd8;
+  border-radius: 4px;
+}
+
+/* Дополнение к существующим стилям */
+
+.status-allowed {
+  color: #27ae60;
+  font-weight: bold;
+}
+
+.status-blocked {
+  color: #e74c3c;
+  font-weight: bold;
+}
+
+.blocked-list li {
+  display: flex;
+  align-items: center;
+  padding: 12px;
+  border-bottom: 1px solid #eee;
+  gap: 12px;
+  transition: background-color 0.2s;
+}
+
+.blocked-list li:hover {
+  background-color: #f8f9fa;
+}
+
+.site-enabled {
+  background-color: #f8f9fa;
+}
+
+.site-disabled {
+  background-color: #e9ecef;
+  opacity: 0.8;
+}
+
+.site-toggle {
+  margin: 0;
+  cursor: pointer;
+  transform: scale(1.2);
+}
+
+.site-name {
+  flex: 1;
+  font-size: 14px;
+  font-family: monospace;
+}
+
+.sites-controls {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 15px;
+  flex-wrap: wrap;
+}
+
+.sites-stats {
+  font-size: 14px;
+  color: #7f8c8d;
+  margin-left: auto;
+}

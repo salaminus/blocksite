@@ -1,0 +1,6 @@
+{
+    "blockedSites": [
+        "https://yandex.ru/games/",
+        "chrome://extensions/"
+    ]
+}
